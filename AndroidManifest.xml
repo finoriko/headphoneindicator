@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="3"
-    android:versionName="1.1.1">
+    package="de.cweiske.headphoneindicator"
+    android:versionCode="1"
+    android:versionName="1.0.0">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -12,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +22,7 @@
         <service android:name=".BackgroundService"/>
 
         <!-- auto-start after boot -->
-        <receiver android:name=".Autostart" android:exported="true">
+        <receiver android:name=".Autostart" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

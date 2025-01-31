@@ -4,9 +4,6 @@ Headphone indicator
 Android app that shows a notification icon in the status bar when
 headphones are plugged into the phone.
 
-Shows a different icon when a headset is attached.
-Both 3.5mm audio jack devices and USB headphones/headsets are supported.
-
 The app aims to be a tiny as possible.
 
 Runs on Android 4.4+.
@@ -57,17 +54,16 @@ Building
 ========
 ::
 
-    $ ./gradlew build
+    $ gradle build
+
+Note that AndroidStudio 1.5.1 does not detect the gradle configuration correctly
+and produces ``.apk`` files much larger than necessary, with duplicated files.
+
+``gradle`` on command line does it correctly, though.
 
 
 Releasing
 =========
-Modify the version in ``AndroidManifest.xml```.
-
-Disable resource file optimization in ``gradle.properties``:
-
-    android.enableResourceOptimizations=false
-
 Build it normally, then sign the generated package file::
 
     $ gradle assembleRelease
@@ -85,24 +81,8 @@ __ https://www.timroes.de/2013/09/22/handling-signing-configs-with-gradle/
 
 Dependencies
 ============
-* gradle 8.5.2 (earlier will probably work, too)
-* Android SDK 34 (compiles for SDK 19 - Android 4.4)
-
-
-Meta data
-=========
-The code repository contains the meta data needed for the Google Play store:
-Text, icons, screenshots.
-
-They follow the `Triple-T gradle publisher`__, which are also
-`ingested by F-Droid`__.
-
-The meta data directory is ``src/main/play/`` - with ``main`` even though
-this app has no flavors, but it's `required by f-droid`__.
-
-__ https://github.com/Triple-T/gradle-play-publisher
-__ https://f-droid.org/en/docs/FAQ_-_App_Developers/#how-do-i-change-the-description-and-add-meta-information-like-screenshots
-__ https://gitlab.com/fdroid/fdroiddata/-/issues/3447
+* gradle 2.12 (earlier will probably work, too)
+* Android SDK 19
 
 
 =========================
@@ -130,3 +110,4 @@ Author
 Headphone indicator was written by `Christian Weiske`__.
 
 __ http://cweiske.de/
+

@@ -3,27 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    android:theme="@android:style/Theme.Holo"
-    tools:context="de.cweiske.headphoneindicator.MainActivity">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="de.cweiske.headphoneindicator.MainActivity"
+    android:theme="@android:style/Theme">
 
     <ImageView
-        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:id="@+id/image"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/unplugged"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:id="@+id/label"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

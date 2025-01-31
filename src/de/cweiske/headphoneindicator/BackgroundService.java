@@ -3,7 +3,6 @@ package de.cweiske.headphoneindicator;
 import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.hardware.usb.UsbManager;
 import android.os.IBinder;
 
 /**
@@ -19,9 +18,6 @@ public class BackgroundService extends Service
     public void onCreate() {
         super.onCreate();
         IntentFilter filter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
-        filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
-        filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
-
         this.notificationReceiver = new NotificationReceiver();
         registerReceiver(this.notificationReceiver, filter);
     }
